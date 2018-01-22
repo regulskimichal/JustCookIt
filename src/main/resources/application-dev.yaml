@@ -1,0 +1,26 @@
+debug: false
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      use-new-id-generator-mappings: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+logging:
+  level:
+    org.hibernate: info
+
+security:
+  oauth2:
+    client:
+      client-id: justcookit
+      client-secret: secret
+      authorized-grant-types: password, client_credentials, refresh_token
+      scope: all
+
+server:
+  port: 5000

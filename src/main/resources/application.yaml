@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: dev
+
+swagger-config:
+  UserController:
+    createUser:
+      value: 'Register new user account.'
+      notes: 'Username and email value must be unique. Does not require authorization.'
+  PublicRecipeController:
+    createRecipe:
+      value: 'Creates new recipe.'
+      notes: 'Does not require authorization.'
