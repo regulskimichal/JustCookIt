@@ -17,5 +17,5 @@ class UserService(
 
     fun findUserById(id: Long): User = userRepository.getOne(id)
 
-    fun findUserByUsername(username: String) : User? = userRepository.findByUsername(username)
+    fun findUserByUsername(username: String): User? = userRepository.findByUsername(username)
 }

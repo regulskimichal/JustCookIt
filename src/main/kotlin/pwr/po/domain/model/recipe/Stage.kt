@@ -1,5 +1,6 @@
 package pwr.po.domain.model.recipe
 
+import org.springframework.data.rest.core.annotation.RestResource
 import java.time.LocalTime
 import javax.persistence.*
 
@@ -8,6 +9,8 @@ data class Stage(
         @Id
         @GeneratedValue
         val id: Long = 0,
+
+        val number: Long,
 
         val name: String,
 
@@ -19,5 +22,6 @@ data class Stage(
 
         @ManyToOne
         @JoinColumn(name = "recipe_id")
+        @RestResource(exported = false)
         val recipe: Recipe
 )

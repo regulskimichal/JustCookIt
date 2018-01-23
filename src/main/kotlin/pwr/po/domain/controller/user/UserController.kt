@@ -15,7 +15,7 @@ class UserController(
         private val userMapper: UserMapper
 ) {
 
-    @PutMapping
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation(
             value = "\${swagger-config.UserController.createUser.value}",

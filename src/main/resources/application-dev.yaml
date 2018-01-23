@@ -5,11 +5,17 @@ spring:
     hibernate:
       ddl-auto: create-drop
       use-new-id-generator-mappings: true
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: create
+          import_files_sql_extractor: org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
+    initialize: true
 logging:
   level:
     org.hibernate: info

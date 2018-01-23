@@ -1,7 +1,6 @@
 package pwr.po.domain.model.recipe
 
 import pwr.po.domain.model.ingredient.Ingredient
-import java.net.URI
 
 data class CreateRecipeDto(
         val name: String,

@@ -4,7 +4,6 @@ import io.swagger.annotations.ApiOperation
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 import pwr.po.domain.model.recipe.CreateRecipeDto
-import pwr.po.domain.model.recipe.FindRecipeDto
 import pwr.po.domain.model.recipe.Recipe
 import pwr.po.domain.model.recipe.RecipeMapper
 import javax.validation.Valid
@@ -15,16 +14,23 @@ class PublicRecipeController(
         private val recipeService: RecipeService,
         private val recipeMapper: RecipeMapper
 ) {
-    @PostMapping
-    @ResponseStatus(HttpStatus.FOUND)
+    @GetMapping(params = ["name"])
+    @ResponseStatus(HttpStatus.OK)
     @ApiOperation(
-            value = "\${swagger-config.PublicRecipeController.findRecipe.value}",
-            notes = "\${swagger-config.PublicRecipeController.findRecipe.notes}"
+            value = "\${swagger-config.PublicRecipeController.findRecipesByName.value}",
+            notes = "\${swagger-config.PublicRecipeController.findRecipesByName.notes}"
     )
-    internal fun findRecipe(@RequestBody @Valid findRecipeDto: FindRecipeDto): List<Recipe> =
-            recipeService.findRecipeByNameAndUserIsNull(findRecipeDto.name)
+    internal fun findRecipesByName(@RequestParam name: String): List<Recipe> = recipeService.findRecipesByNameLike(name)
 
-    @PutMapping
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    @ApiOperation(
+            value = "\${swagger-config.PublicRecipeController.findRecipes.value}",
+            notes = "\${swagger-config.PublicRecipeController.findRecipes.notes}"
+    )
+    internal fun findRecipes(): List<Recipe> = recipeService.findAll()
+
+    @PostMapping
     @ApiOperation(
             value = "\${swagger-config.PublicRecipeController.createRecipe.value}",
             notes = "\${swagger-config.PublicRecipeController.createRecipe.notes}"

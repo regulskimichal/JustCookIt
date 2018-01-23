@@ -1,5 +1,6 @@
 package pwr.po.domain.model.recipe
 
+import org.springframework.data.rest.core.annotation.RestResource
 import java.net.URI
 import javax.persistence.*
 
@@ -13,5 +14,6 @@ data class Photo(
 
         @ManyToOne
         @JoinColumn(name = "recipe_id")
+        @RestResource(exported = false)
         val recipe: Recipe
 )

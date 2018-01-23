@@ -10,4 +10,3 @@ class UserRecipeController(
         private val recipeService: RecipeService,
         private val userService: UserService
 )
-

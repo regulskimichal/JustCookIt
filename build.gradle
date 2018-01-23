@@ -60,6 +60,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
     implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+    implementation 'org.springframework.data:spring-data-rest-core'
     implementation "org.springframework.boot:spring-boot-starter-web"
     implementation "org.springframework.security.oauth:spring-security-oauth2:2.2.1.RELEASE"
     implementation "io.springfox:springfox-swagger2:$swagger_version"

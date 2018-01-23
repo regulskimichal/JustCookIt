@@ -5,9 +5,19 @@ spring:
 swagger-config:
   UserController:
     createUser:
-      value: 'Register new user account.'
-      notes: 'Username and email value must be unique. Does not require authorization.'
+      value: 'Tworzy nowego użytkownika.'
+      notes: 'Nazwa użytkownika oraz email muszą być unikatowe. Nie wymaga autoryzacji.'
   PublicRecipeController:
     createRecipe:
-      value: 'Creates new recipe.'
-      notes: 'Does not require authorization.'
+      value: 'Tworzy nowy przepis.'
+      notes: 'Nie wymaga autoryzacji.'
+    findRecipesByName:
+      value: 'Szuka przepisów na podstawie nazwy podanej w parametrze.'
+      notes: 'Wyszukuje wszystkie przepisy w bazie danych, które pasują do wzorca.'
+    findRecipes:
+      value: 'Szuka przepisów.'
+      notes: 'Wyszukuje wszystkie przepisy w bazie danych.'
+  CategoryController:
+    findCategories:
+      value: "Szuka kategorii przepisów."
+      notes: "Wyszukuje wszystkie kategorie w bazie danych."

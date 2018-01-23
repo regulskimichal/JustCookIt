@@ -17,5 +17,7 @@ class RecipeService(
 
     fun findRecipeByIdAndUserIsNull(id: Long): Recipe? = recipeRepository.getOne(id)
 
-    fun findRecipeByNameAndUserIsNull(name: String): List<Recipe> = recipeRepository.findRecipesByNameAndUserIdIsNull(name)
+    fun findRecipesByNameLike(name: String): List<Recipe> = recipeRepository.findByNameIgnoreCaseContaining(name)
+
+    fun findAll(): List<Recipe> = recipeRepository.findAll()
 }

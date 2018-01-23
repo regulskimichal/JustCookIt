@@ -1,5 +1,6 @@
 package pwr.po.domain.model.ingredient
 
+import org.springframework.data.rest.core.annotation.RestResource
 import pwr.po.domain.model.recipe.MeasurementUnit
 import pwr.po.domain.model.recipe.Recipe
 import javax.persistence.*
@@ -25,6 +26,7 @@ data class Ingredient(
 
         @ManyToOne
         @JoinColumn(name = "recipe_id")
+        @RestResource(exported = false)
         val recipe: Recipe
 ) {
     fun toUnit(measurementUnit: MeasurementUnit): Ingredient {
